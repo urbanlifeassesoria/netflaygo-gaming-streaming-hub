@@ -1,12 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+// HOME PAGE - Tienda principal Netflaygo
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Navbar } from '@/components/Navbar';
+import { Hero } from '@/components/Hero';
+import { ProductGrid } from '@/components/ProductGrid';
+import { SupportSection } from '@/components/SupportSection';
+import { Footer } from '@/components/Footer';
+import { useFilterStore } from '@/store/useStore';
 
 const Index = () => {
+  const [searchParams] = useSearchParams();
+  const setCategory = useFilterStore((state) => state.setCategory);
+
+  // Handle category from URL
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category) {
+      setCategory(category);
+      // Scroll to products
+      setTimeout(() => {
+        document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, [searchParams, setCategory]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <ProductGrid />
+      <SupportSection />
+      <Footer />
     </div>
   );
 };
