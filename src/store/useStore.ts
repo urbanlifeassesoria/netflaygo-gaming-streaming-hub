@@ -1,6 +1,7 @@
-// ZUSTAND STORE - Estado global de filtros y carrito
+// ZUSTAND STORE - Solo filtros (SIN CARRITO - compra directa WhatsApp)
 import { create } from 'zustand';
 
+// FILTROS STORE - Categorías, precios y búsqueda
 interface FilterState {
   category: string;
   priceRange: string;
@@ -19,45 +20,4 @@ export const useFilterStore = create<FilterState>((set) => ({
   setPriceRange: (priceRange) => set({ priceRange }),
   setSearchQuery: (searchQuery) => set({ searchQuery }),
   resetFilters: () => set({ category: 'all', priceRange: 'all', searchQuery: '' }),
-}));
-
-interface CartItem {
-  productId: string;
-  quantity: number;
-}
-
-interface CartState {
-  items: CartItem[];
-  addItem: (productId: string) => void;
-  removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
-  clearCart: () => void;
-  getTotalItems: () => number;
-}
-
-export const useCartStore = create<CartState>((set, get) => ({
-  items: [],
-  addItem: (productId) => set((state) => {
-    const existing = state.items.find(item => item.productId === productId);
-    if (existing) {
-      return {
-        items: state.items.map(item =>
-          item.productId === productId
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        ),
-      };
-    }
-    return { items: [...state.items, { productId, quantity: 1 }] };
-  }),
-  removeItem: (productId) => set((state) => ({
-    items: state.items.filter(item => item.productId !== productId),
-  })),
-  updateQuantity: (productId, quantity) => set((state) => ({
-    items: state.items.map(item =>
-      item.productId === productId ? { ...item, quantity } : item
-    ),
-  })),
-  clearCart: () => set({ items: [] }),
-  getTotalItems: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
 }));

@@ -1,15 +1,29 @@
-// PRODUCTS DATA - Catálogo completo Netflaygo
+// PRODUCTS DATA - Catálogo completo Netflaygo (SIN JUEGOS INDIVIDUALES)
+// Los videojuegos se consultan por WhatsApp directamente
+
+// IMPORTS DE LOGOS
+import netflixLogo from '@/assets/logos/netflix.jpeg';
+import disneyLogo from '@/assets/logos/disney.jpeg';
+import primeLogo from '@/assets/logos/prime.jpeg';
+import spotifyLogo from '@/assets/logos/spotify.jpeg';
+import duolingoLogo from '@/assets/logos/duolingo.jpeg';
+import plexLogo from '@/assets/logos/plex.jpeg';
+import canvaLogo from '@/assets/logos/canva.jpeg';
+import paramountLogo from '@/assets/logos/paramount.jpeg';
+import crunchyrollLogo from '@/assets/logos/crunchyroll.jpeg';
+
 export interface Product {
   id: string;
   slug: string;
   name: string;
-  category: 'streaming' | 'iptv' | 'office' | 'gaming';
+  category: 'streaming' | 'iptv' | 'office';
   price: number;
   warranty: string;
   description: string;
   features: string[];
   icon: string;
   color: string;
+  logo?: string; // Imagen real del logo
 }
 
 export const products: Product[] = [
@@ -24,7 +38,8 @@ export const products: Product[] = [
     description: 'Acceso completo a Netflix con calidad 4K Ultra HD',
     features: ['4K Ultra HD', 'Sin anuncios', '1 dispositivo', 'Activación 5 min', 'Soporte 24/7'],
     icon: '🎬',
-    color: '#E50914'
+    color: '#E50914',
+    logo: netflixLogo
   },
   {
     id: '2',
@@ -36,7 +51,8 @@ export const products: Product[] = [
     description: 'Disney+ con ESPN incluido para deportes en vivo',
     features: ['4K Ultra HD', 'ESPN incluido', 'Marvel, Star Wars', 'Pixar', 'National Geographic'],
     icon: '✨',
-    color: '#113CCF'
+    color: '#113CCF',
+    logo: disneyLogo
   },
   {
     id: '3',
@@ -48,7 +64,8 @@ export const products: Product[] = [
     description: 'Todo el contenido de Disney, Pixar, Marvel y Star Wars',
     features: ['4K Ultra HD', 'Descargas offline', 'Perfiles múltiples', 'Control parental'],
     icon: '🏰',
-    color: '#113CCF'
+    color: '#113CCF',
+    logo: disneyLogo
   },
   {
     id: '4',
@@ -72,10 +89,37 @@ export const products: Product[] = [
     description: 'Amazon Prime Video con series y películas exclusivas',
     features: ['4K Ultra HD', 'Amazon Originals', 'X-Ray', 'Descargas', 'Thursday Night Football'],
     icon: '📺',
-    color: '#00A8E1'
+    color: '#00A8E1',
+    logo: primeLogo
   },
   {
     id: '6',
+    slug: 'paramount-plus',
+    name: 'Paramount+',
+    category: 'streaming',
+    price: 7000,
+    warranty: '28 días',
+    description: 'Películas Paramount, series exclusivas y deportes',
+    features: ['4K Ultra HD', 'Películas Paramount', 'Series exclusivas', 'Deportes CBS', 'Sin anuncios'],
+    icon: '⭐',
+    color: '#0064FF',
+    logo: paramountLogo
+  },
+  {
+    id: '7',
+    slug: 'crunchyroll',
+    name: 'Crunchyroll',
+    category: 'streaming',
+    price: 7000,
+    warranty: '28 días',
+    description: 'Anime sin límites, simulcasts y manga',
+    features: ['Anime ilimitado', 'Simulcasts', 'Manga digital', 'Sin anuncios', 'Offline'],
+    icon: '🍙',
+    color: '#F47521',
+    logo: crunchyrollLogo
+  },
+  {
+    id: '8',
     slug: 'plex',
     name: 'Plex',
     category: 'streaming',
@@ -84,10 +128,11 @@ export const products: Product[] = [
     description: 'Servidor multimedia con catálogo extenso',
     features: ['Catálogo completo', 'Múltiples plataformas', 'Servidor privado', 'Sin límites'],
     icon: '🎞️',
-    color: '#E5A00D'
+    color: '#E5A00D',
+    logo: plexLogo
   },
   {
-    id: '7',
+    id: '9',
     slug: 'claro-video-win',
     name: 'Claro Video Win+',
     category: 'streaming',
@@ -99,7 +144,7 @@ export const products: Product[] = [
     color: '#DA291C'
   },
   {
-    id: '8',
+    id: '10',
     slug: 'directvgo-win',
     name: 'DirecTV Go Win+',
     category: 'streaming',
@@ -112,7 +157,7 @@ export const products: Product[] = [
   },
   // IPTV/DEPORTES
   {
-    id: '9',
+    id: '11',
     slug: 'megatv-1conn',
     name: 'MegaTV 1 Conexión',
     category: 'iptv',
@@ -124,7 +169,7 @@ export const products: Product[] = [
     color: '#FF6B35'
   },
   {
-    id: '10',
+    id: '12',
     slug: 'megatv-2conn',
     name: 'MegaTV 2 Conexiones',
     category: 'iptv',
@@ -136,7 +181,7 @@ export const products: Product[] = [
     color: '#FF6B35'
   },
   {
-    id: '11',
+    id: '13',
     slug: 'movistar-espn',
     name: 'Movistar TV ESPN',
     category: 'iptv',
@@ -148,7 +193,7 @@ export const products: Product[] = [
     color: '#019DF4'
   },
   {
-    id: '12',
+    id: '14',
     slug: 'apple-tv',
     name: 'Apple TV+',
     category: 'iptv',
@@ -160,7 +205,7 @@ export const products: Product[] = [
     color: '#555555'
   },
   {
-    id: '13',
+    id: '15',
     slug: 'iptv-1conn-mes',
     name: 'IPTV 1 Conn/Mes',
     category: 'iptv',
@@ -172,7 +217,7 @@ export const products: Product[] = [
     color: '#9333EA'
   },
   {
-    id: '14',
+    id: '16',
     slug: 'iptv-1conn-trimestre',
     name: 'IPTV 1 Conn/3 Meses',
     category: 'iptv',
@@ -184,7 +229,7 @@ export const products: Product[] = [
     color: '#9333EA'
   },
   {
-    id: '15',
+    id: '17',
     slug: 'vix-plus',
     name: 'ViX+',
     category: 'iptv',
@@ -197,7 +242,7 @@ export const products: Product[] = [
   },
   // OFFICE/DISEÑO
   {
-    id: '16',
+    id: '18',
     slug: 'office-365',
     name: 'Office 365 (5 disp)',
     category: 'office',
@@ -209,7 +254,7 @@ export const products: Product[] = [
     color: '#D83B01'
   },
   {
-    id: '17',
+    id: '19',
     slug: 'canva-pro-1mes',
     name: 'Canva Pro 1 Mes',
     category: 'office',
@@ -218,10 +263,11 @@ export const products: Product[] = [
     description: 'Diseño profesional sin límites',
     features: ['Templates premium', 'Brand Kit', 'Remover fondo', 'Magic Resize', 'Contenido ilimitado'],
     icon: '🎨',
-    color: '#00C4CC'
+    color: '#00C4CC',
+    logo: canvaLogo
   },
   {
-    id: '18',
+    id: '20',
     slug: 'canva-pro-4mes',
     name: 'Canva Pro 4 Meses',
     category: 'office',
@@ -230,10 +276,11 @@ export const products: Product[] = [
     description: 'Canva Pro con descuento trimestral',
     features: ['Todo Canva Pro', 'Ahorro 28%', 'Soporte premium', 'Colaboración', 'Exportar HD'],
     icon: '🎨',
-    color: '#00C4CC'
+    color: '#00C4CC',
+    logo: canvaLogo
   },
   {
-    id: '19',
+    id: '21',
     slug: 'capcut-pro',
     name: 'CapCut Pro',
     category: 'office',
@@ -245,7 +292,7 @@ export const products: Product[] = [
     color: '#000000'
   },
   {
-    id: '20',
+    id: '22',
     slug: 'gemini-pro',
     name: 'Gemini Pro',
     category: 'office',
@@ -256,109 +303,37 @@ export const products: Product[] = [
     icon: '🤖',
     color: '#4285F4'
   },
-  // GAMING PS4/PS5
-  {
-    id: '21',
-    slug: 'fifa-25-ps5',
-    name: 'FIFA 25 PS5',
-    category: 'gaming',
-    price: 25000,
-    warranty: 'Permanente',
-    description: 'EA Sports FC 25 edición digital PS5',
-    features: ['Digital PS5', 'Online multiplayer', 'Ultimate Team', 'Career Mode', 'Próxima gen'],
-    icon: '⚽',
-    color: '#1DB954'
-  },
-  {
-    id: '22',
-    slug: 'cod-ps5',
-    name: 'Call of Duty PS5',
-    category: 'gaming',
-    price: 30000,
-    warranty: 'Permanente',
-    description: 'Call of Duty último título disponible',
-    features: ['Campaign', 'Multiplayer', 'Zombies', 'Warzone access', 'Digital PS5'],
-    icon: '🔫',
-    color: '#1E1E1E'
-  },
   {
     id: '23',
-    slug: 'gta-v-ps4',
-    name: 'GTA V PS4',
-    category: 'gaming',
-    price: 20000,
-    warranty: 'Permanente',
-    description: 'Grand Theft Auto V para PS4',
-    features: ['Historia completa', 'GTA Online', 'Mundo abierto', 'Updates gratis', 'Multiplayer'],
-    icon: '🚗',
-    color: '#00A651'
+    slug: 'spotify-premium',
+    name: 'Spotify Premium',
+    category: 'streaming',
+    price: 7000,
+    warranty: '1 mes',
+    description: 'Música sin límites, sin anuncios',
+    features: ['Sin anuncios', 'Descargas offline', 'Calidad alta', 'Lyrics', 'Podcasts'],
+    icon: '🎵',
+    color: '#1DB954',
+    logo: spotifyLogo
   },
   {
     id: '24',
-    slug: 'spider-man-ps5',
-    name: 'Spider-Man Miles Morales PS5',
-    category: 'gaming',
-    price: 25000,
-    warranty: 'Permanente',
-    description: 'Marvel Spider-Man Miles Morales PS5',
-    features: ['Ray Tracing', '60fps Mode', 'Historia nueva', 'DualSense', 'PS5 exclusivo'],
-    icon: '🕷️',
-    color: '#E23636'
-  },
-  {
-    id: '25',
-    slug: 'god-of-war-ragnarok',
-    name: 'God of War Ragnarök PS5',
-    category: 'gaming',
-    price: 35000,
-    warranty: 'Permanente',
-    description: 'God of War Ragnarök edición digital',
-    features: ['Historia épica', 'Gráficos 4K', 'DualSense', 'Modo Rendimiento', 'PS5 optimizado'],
-    icon: '⚔️',
-    color: '#003366'
-  },
-  {
-    id: '26',
-    slug: 'nba-2k25-ps5',
-    name: 'NBA 2K25 PS5',
-    category: 'gaming',
-    price: 25000,
-    warranty: 'Permanente',
-    description: 'NBA 2K25 Next Gen para PS5',
-    features: ['MyCareer', 'MyTeam', 'Online', 'Next Gen', 'Roster actualizado'],
-    icon: '🏀',
-    color: '#FF6600'
-  },
-  {
-    id: '27',
-    slug: 'tekken-8-ps5',
-    name: 'Tekken 8 PS5',
-    category: 'gaming',
-    price: 30000,
-    warranty: 'Permanente',
-    description: 'Tekken 8 última entrega de la saga',
-    features: ['32 luchadores', 'Online ranked', 'Story Mode', 'Arcade', 'Next Gen graphics'],
-    icon: '👊',
-    color: '#FF0000'
-  },
-  {
-    id: '28',
-    slug: 'crash-bandicoot-ps4',
-    name: 'Crash Bandicoot PS4',
-    category: 'gaming',
-    price: 18000,
-    warranty: 'Permanente',
-    description: 'Crash Bandicoot N. Sane Trilogy',
-    features: ['3 juegos', 'Remasterizado', 'Clásico', 'Familia', 'Nostalgia'],
-    icon: '🦊',
-    color: '#FF7F00'
+    slug: 'duolingo-plus',
+    name: 'Duolingo Plus',
+    category: 'office',
+    price: 7000,
+    warranty: '1 mes',
+    description: 'Aprende idiomas sin límites ni anuncios',
+    features: ['Sin anuncios', 'Vidas ilimitadas', 'Práctica errores', 'Modo offline', 'Progreso guardado'],
+    icon: '🦉',
+    color: '#58CC02',
+    logo: duolingoLogo
   },
 ];
 
 export const categories = [
   { id: 'all', name: 'Todos', icon: '🏠', count: products.length },
   { id: 'streaming', name: 'Streaming', icon: '🎬', count: products.filter(p => p.category === 'streaming').length },
-  { id: 'gaming', name: 'PS4/PS5', icon: '🎮', count: products.filter(p => p.category === 'gaming').length },
   { id: 'iptv', name: 'IPTV/Deportes', icon: '📺', count: products.filter(p => p.category === 'iptv').length },
   { id: 'office', name: 'Office/Diseño', icon: '💼', count: products.filter(p => p.category === 'office').length },
 ];

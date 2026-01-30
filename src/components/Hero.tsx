@@ -1,6 +1,6 @@
-// HERO SECTION - Gaming animated hero
+// HERO SECTION - Gaming animated hero con logo GRANDE (250px)
 import { motion } from 'framer-motion';
-import { Search, Sparkles, Gamepad2, Tv, Zap } from 'lucide-react';
+import { Search, Sparkles, Tv, Zap, Briefcase } from 'lucide-react';
 import { useFilterStore } from '@/store/useStore';
 import logo from '@/assets/logo-netflaygo.jpeg';
 
@@ -10,8 +10,8 @@ export const Hero = () => {
   const quickFilters = [
     { id: 'all', name: 'Todos', icon: Sparkles },
     { id: 'streaming', name: 'Streaming', icon: Tv },
-    { id: 'gaming', name: 'PS4/PS5', icon: Gamepad2 },
-    { id: 'iptv', name: 'IPTV', icon: Zap },
+    { id: 'iptv', name: 'IPTV/Deportes', icon: Zap },
+    { id: 'office', name: 'Office', icon: Briefcase },
   ];
 
   return (
@@ -25,7 +25,7 @@ export const Hero = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
-        {/* Logo */}
+        {/* Logo - MÁS GRANDE (250px) con glow multicolor */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -35,8 +35,12 @@ export const Hero = () => {
           <img
             src={logo}
             alt="Netflaygo"
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-2xl shadow-2xl animate-float"
-            style={{ boxShadow: '0 0 60px rgba(139, 92, 246, 0.5)' }}
+            className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto rounded-2xl shadow-2xl animate-float"
+            style={{ 
+              boxShadow: '0 0 80px rgba(139, 92, 246, 0.6), 0 0 120px rgba(236, 72, 153, 0.3)',
+              filter: 'brightness(1.2) contrast(1.1)',
+              maxWidth: '250px'
+            }}
           />
         </motion.div>
 
@@ -59,7 +63,7 @@ export const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
         >
-          Netflix $15k | Disney+ $6k | PS5 Games | IPTV 4K
+          Netflix $15k | Disney+ $6k | Paramount+ $7k | IPTV 4K
           <br />
           <span className="text-secondary font-semibold">Entrega inmediata vía WhatsApp</span>
         </motion.p>
@@ -75,7 +79,7 @@ export const Hero = () => {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Buscar Netflix, FIFA, IPTV..."
+              placeholder="Buscar Netflix, Paramount+, IPTV..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 rounded-xl bg-card/80 backdrop-blur-lg border border-border focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all text-foreground placeholder:text-muted-foreground"
@@ -111,7 +115,7 @@ export const Hero = () => {
         >
           {[
             { value: '500+', label: 'Clientes' },
-            { value: '28+', label: 'Productos' },
+            { value: '24+', label: 'Productos' },
             { value: '24/7', label: 'Soporte' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
