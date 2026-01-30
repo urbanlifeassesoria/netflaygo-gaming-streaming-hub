@@ -1,4 +1,4 @@
-// FOOTER - Gaming footer with payment methods
+// FOOTER - Gaming footer con "Brotherstic SAS - Netflix Colombia"
 import { Link } from 'react-router-dom';
 import { MessageCircle, Phone, MapPin, Clock } from 'lucide-react';
 import logo from '@/assets/logo-netflaygo.jpeg';
@@ -22,7 +22,12 @@ export const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Netflaygo" className="w-16 h-16 rounded-xl" />
+              <img 
+                src={logo} 
+                alt="Netflaygo" 
+                className="w-16 h-16 rounded-xl"
+                style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+              />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Tu tienda de confianza para streaming y videojuegos en Colombia. 
@@ -45,7 +50,6 @@ export const Footer = () => {
             <ul className="space-y-2">
               {[
                 { name: 'Streaming', href: '/?category=streaming' },
-                { name: 'Videojuegos PS4/PS5', href: '/?category=gaming' },
                 { name: 'IPTV & Deportes', href: '/?category=iptv' },
                 { name: 'Office & Diseño', href: '/?category=office' },
               ].map((link) => (
@@ -103,18 +107,16 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - BROTHERSTIC SAS */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            © 2024 Netflaygo. Todos los derechos reservados. 
+            © 2026 Netflaygo. Todos los derechos reservados. 
             <br className="md:hidden" />
             <span className="hidden md:inline"> | </span>
             Barranquilla, Colombia
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <span>Est. 2017</span>
-            <span className="w-1 h-1 rounded-full bg-muted-foreground" />
-            <span>Diseño by BryDesignArt</span>
+            <span>Brotherstic SAS - Netflix Colombia</span>
           </div>
         </div>
       </div>

@@ -111,14 +111,27 @@ ${notasClean ? `📝 Notas: ${notasClean}` : ''}
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
             >
-              {/* Header */}
+              {/* Header - Con IMAGEN de logo */}
               <div className="flex items-start gap-4 mb-6">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl"
-                  style={{ backgroundColor: `${product.color}20` }}
-                >
-                  {product.icon}
-                </div>
+                {product.logo ? (
+                  <div
+                    className="w-24 h-24 rounded-2xl overflow-hidden"
+                    style={{ backgroundColor: `${product.color}20` }}
+                  >
+                    <img 
+                      src={product.logo} 
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="w-24 h-24 rounded-2xl flex items-center justify-center text-4xl"
+                    style={{ backgroundColor: `${product.color}20` }}
+                  >
+                    {product.icon}
+                  </div>
+                )}
                 <div>
                   <h1 className="font-gaming text-3xl md:text-4xl font-bold mb-2">
                     {product.name}

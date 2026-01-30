@@ -1,9 +1,10 @@
-// HOME PAGE - Tienda principal Netflaygo
+// HOME PAGE - Tienda principal Netflaygo con sección videojuegos
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { ProductGrid } from '@/components/ProductGrid';
+import { GamingSection } from '@/components/GamingSection';
 import { SupportSection } from '@/components/SupportSection';
 import { Footer } from '@/components/Footer';
 import { useFilterStore } from '@/store/useStore';
@@ -29,6 +30,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <ProductGrid />
+      <GamingSection />
       <SupportSection />
       <Footer />
     </div>

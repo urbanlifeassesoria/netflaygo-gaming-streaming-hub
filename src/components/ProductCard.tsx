@@ -1,9 +1,8 @@
-// PRODUCT CARD - Compact gaming card with glow hover
+// PRODUCT CARD - Card con IMAGEN REAL del logo + compra directa WhatsApp
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Eye, Shield } from 'lucide-react';
+import { Eye, MessageCircle, Shield } from 'lucide-react';
 import { Product } from '@/data/products';
-import { useCartStore } from '@/store/useStore';
 
 interface ProductCardProps {
   product: Product;
@@ -11,8 +10,6 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product, index }: ProductCardProps) => {
-  const addItem = useCartStore((state) => state.addItem);
-
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
@@ -22,11 +19,12 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
     }).format(price);
   };
 
+  // COMPRA DIRECTA WHATSAPP (Sin carrito)
   const handleWhatsAppBuy = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     const message = encodeURIComponent(
-      `Hola Netflaygo 🎮,\n\nQuiero comprar:\n📦 ${product.name}\n💰 ${formatPrice(product.price)}\n\n¡Espero su respuesta!`
+      `¡Hola Netflaygo! 🎮\n\nQuiero comprar:\n📦 ${product.name}\n💰 ${formatPrice(product.price)}\n⏱️ Garantía: ${product.warranty}\n\n¡Espero su respuesta!`
     );
     window.open(`https://wa.me/573116462203?text=${message}`, '_blank');
   };
@@ -40,14 +38,29 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
     >
       <Link to={`/producto/${product.slug}`}>
         <div className="card-gaming h-full p-4 flex flex-col">
-          {/* Header - Icon + Price */}
+          {/* Header - IMAGEN LOGO del servicio */}
           <div className="flex items-start justify-between mb-3">
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-              style={{ backgroundColor: `${product.color}20` }}
-            >
-              {product.icon}
-            </div>
+            {product.logo ? (
+              // IMAGEN REAL del logo
+              <div
+                className="w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden"
+                style={{ backgroundColor: `${product.color}20` }}
+              >
+                <img 
+                  src={product.logo} 
+                  alt={product.name}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+            ) : (
+              // Fallback con emoji
+              <div
+                className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
+                style={{ backgroundColor: `${product.color}20` }}
+              >
+                {product.icon}
+              </div>
+            )}
             <div className="text-right">
               <div className="font-gaming text-lg font-bold text-accent">
                 {formatPrice(product.price)}
@@ -66,7 +79,7 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
             <span>{product.warranty} garantía</span>
           </div>
 
-          {/* Actions */}
+          {/* Actions - COMPRA DIRECTA */}
           <div className="flex gap-2 mt-auto">
             <Link
               to={`/producto/${product.slug}`}
@@ -79,7 +92,7 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
               onClick={handleWhatsAppBuy}
               className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg btn-gaming text-sm font-medium"
             >
-              <ShoppingCart className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
               <span>Comprar</span>
             </button>
           </div>
