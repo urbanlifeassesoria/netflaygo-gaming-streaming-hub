@@ -11,6 +11,17 @@ import plexLogo from '@/assets/logos/plex.jpeg';
 import canvaLogo from '@/assets/logos/canva.jpeg';
 import paramountLogo from '@/assets/logos/paramount.jpeg';
 import crunchyrollLogo from '@/assets/logos/crunchyroll.jpeg';
+import appletvlogo from '@/assets/logos/appletv.png';
+import maxhboLogo from '@/assets/logos/maxhbo.png';
+import clarovideoLogo from '@/assets/logos/clarovideo.jpg';
+import directvgoLogo from '@/assets/logos/directvgo.jpg';
+import megatvLogo from '@/assets/logos/megatv1.webp';
+import movistartvLogo from '@/assets/logos/movistartv.png';
+import iptvLogo from '@/assets/logos/iptv.jpg';
+import vixLogo from '@/assets/logos/vix.png';
+import officeLogo from '@/assets/logos/office365.png';
+import catcupLogo from '@/assets/logos/capcut.jpg';
+import geminiLogo from '@/assets/logos/gemini.jpg';
 
 export interface Product {
   id: string;
@@ -77,7 +88,8 @@ export const products: Product[] = [
     description: 'HBO, Warner Bros, DC y contenido exclusivo',
     features: ['4K Ultra HD', 'HBO Original', 'Warner Bros', 'DC Comics', 'Sin anuncios'],
     icon: '🎭',
-    color: '#5822B4'
+    color: '#5822B4',
+    logo: maxhboLogo
   },
   {
     id: '5',
@@ -141,7 +153,8 @@ export const products: Product[] = [
     description: 'Claro Video con Win+ Sports incluido',
     features: ['Deportes en vivo', 'Películas', 'Series', 'Win Sports+', 'Liga Colombiana'],
     icon: '⚽',
-    color: '#DA291C'
+    color: '#DA291C',
+    logo: clarovideoLogo
   },
   {
     id: '10',
@@ -153,7 +166,8 @@ export const products: Product[] = [
     description: 'DirecTV Go premium con Win Sports+',
     features: ['TV en vivo', 'Win Sports+', 'HBO', 'ESPN', 'Deportes premium'],
     icon: '📡',
-    color: '#00A1DE'
+    color: '#00A1DE',
+    logo: directvgoLogo
   },
   // IPTV/DEPORTES
   {
@@ -166,7 +180,8 @@ export const products: Product[] = [
     description: 'IPTV premium con +5000 canales en vivo',
     features: ['+5000 canales', 'Deportes en vivo', 'Películas 24/7', 'Series', 'PPV incluido'],
     icon: '📺',
-    color: '#FF6B35'
+    color: '#FF6B35',
+    logo: megatvLogo
   },
   {
     id: '12',
@@ -178,7 +193,8 @@ export const products: Product[] = [
     description: 'IPTV premium para 2 dispositivos simultáneos',
     features: ['2 dispositivos', '+5000 canales', 'Deportes HD', 'VOD incluido', 'EPG completo'],
     icon: '📺',
-    color: '#FF6B35'
+    color: '#FF6B35',
+    logo: megatvLogo
   },
   {
     id: '13',
@@ -190,7 +206,8 @@ export const products: Product[] = [
     description: 'Movistar TV con ESPN y deportes premium',
     features: ['ESPN incluido', 'LaLiga', 'Champions', 'Movistar+', 'Fútbol mundial'],
     icon: '⚽',
-    color: '#019DF4'
+    color: '#019DF4',
+    logo: movistartvLogo
   },
   {
     id: '14',
@@ -202,7 +219,8 @@ export const products: Product[] = [
     description: 'Contenido exclusivo de Apple con MLS Season Pass',
     features: ['Apple Originals', 'MLS Season Pass', '4K Dolby Vision', 'Dolby Atmos', 'Sin anuncios'],
     icon: '🍎',
-    color: '#555555'
+    color: '#555555',
+    logo: appletvlogo
   },
   {
     id: '15',
@@ -214,7 +232,8 @@ export const products: Product[] = [
     description: 'IPTV básico mensual con canales premium',
     features: ['+3000 canales', 'HD/FHD', 'Deportes', 'Películas', 'Soporte técnico'],
     icon: '📡',
-    color: '#9333EA'
+    color: '#9333EA', 
+    logo: iptvLogo
   },
   {
     id: '16',
@@ -226,7 +245,8 @@ export const products: Product[] = [
     description: 'IPTV trimestral con mejor precio',
     features: ['+3000 canales', 'Ahorro 25%', 'Soporte prioritario', 'Actualizaciones', 'EPG'],
     icon: '📡',
-    color: '#9333EA'
+    color: '#9333EA',
+    logo: iptvLogo
   },
   {
     id: '17',
@@ -238,7 +258,8 @@ export const products: Product[] = [
     description: 'Streaming latino con deportes y entretenimiento',
     features: ['Liga MX', 'Boxeo', 'Telenovelas', 'Películas', 'Sin anuncios'],
     icon: '🌮',
-    color: '#FF6B00'
+    color: '#FF6B00',
+    logo: vixLogo
   },
   // OFFICE/DISEÑO
   {
@@ -251,7 +272,8 @@ export const products: Product[] = [
     description: 'Microsoft 365 completo para 5 dispositivos',
     features: ['Word, Excel, PowerPoint', 'OneDrive 1TB', 'Outlook', '5 dispositivos', 'Actualizaciones'],
     icon: '📊',
-    color: '#D83B01'
+    color: '#D83B01',
+    logo: officeLogo
   },
   {
     id: '19',
@@ -289,7 +311,8 @@ export const products: Product[] = [
     description: 'Editor de video profesional con IA',
     features: ['Sin marca de agua', 'Efectos premium', 'IA avanzada', 'Exportar 4K', 'Templates exclusivos'],
     icon: '🎬',
-    color: '#000000'
+    color: '#000000',
+    logo: catcupLogo
   },
   {
     id: '22',
@@ -301,7 +324,8 @@ export const products: Product[] = [
     description: 'IA de Google avanzada para productividad',
     features: ['IA generativa', 'Integración Google', 'Sin límites', 'Prioridad', 'API access'],
     icon: '🤖',
-    color: '#4285F4'
+    color: '#4285F4',
+    logo: geminiLogo
   },
   {
     id: '23',
