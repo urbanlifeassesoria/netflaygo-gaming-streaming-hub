@@ -113,7 +113,7 @@ export const Footer = () => {
             © 2026 Netflaygo. Todos los derechos reservados. 
             <br className="md:hidden" />
             <span className="hidden md:inline"> | </span>
-            Barranquilla, Colombia
+            Medellín, Colombia
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <span>Brotherstic SAS - Netflix Colombia</span>

@@ -22,6 +22,8 @@ import vixLogo from '@/assets/logos/vix.png';
 import officeLogo from '@/assets/logos/office365.png';
 import catcupLogo from '@/assets/logos/capcut.jpg';
 import geminiLogo from '@/assets/logos/gemini.jpg';
+import youtubeLogo from '@/assets/logos/youtube.png';
+import spotifyLogo2 from '@/assets/logos/spotify.png';
 
 export interface Product {
   id: string;
@@ -317,7 +319,7 @@ export const products: Product[] = [
   {
     id: '22',
     slug: 'gemini-pro',
-    name: 'Gemini Pro',
+    name: 'Gemini PRO',
     category: 'office',
     price: 12000,
     warranty: '1 mes',
@@ -352,6 +354,45 @@ export const products: Product[] = [
     icon: '🦉',
     color: '#58CC02',
     logo: duolingoLogo
+  },
+  {
+    id: '25',
+    slug: 'youtube-premium',
+    name: 'Youtube Premium',
+    category: 'streaming',
+    price: 8000,
+    warranty: '1 mes',
+    description: 'YouTube sin anuncios y YouTube Music',
+    features: ['Sin anuncios', 'YouTube Music'],
+    icon: '▶️',
+    color: '#cc0202',
+    logo: youtubeLogo
+  },
+    {
+    id: '26',
+    slug: 'youtube-premium',
+    name: 'Youtube Premium',
+    category: 'streaming',
+    price: 120000,
+    warranty: '1 año',
+    description: 'YouTube sin anuncios y YouTube Music',
+    features: ['Sin anuncios', 'YouTube Music'],
+    icon: '▶️',
+    color: '#cc0202',
+    logo: youtubeLogo
+  },
+      {
+    id: '27',
+    slug: 'spotify-premium',
+    name: 'Spotify Premium',
+    category: 'streaming',
+    price: 22000,
+    warranty: '3 meses',
+    description: 'Spotify sin anuncios y con calidad de audio alta',
+    features: ['Sin anuncios', 'Descargas offline', 'Calidad alta', 'Lyrics', 'Podcasts'],
+    icon: '🎵',
+    color: '#1DB954',
+    logo: spotifyLogo2
   },
 ];
 
