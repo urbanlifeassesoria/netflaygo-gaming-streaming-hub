@@ -243,7 +243,7 @@ export const products: Product[] = [
     name: 'IPTV 1 Conn/3 Meses',
     category: 'iptv',
     price: 90000,
-    warranty: '3 meses',
+    warranty: '15 meses',
     description: 'IPTV trimestral con mejor precio',
     features: ['+3000 canales', 'Ahorro 25%', 'Soporte prioritario', 'Actualizaciones', 'EPG'],
     icon: '📡',
