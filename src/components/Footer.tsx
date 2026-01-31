@@ -77,7 +77,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-accent" />
-                Barranquilla, Colombia
+                Medellín, Colombia
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4 text-secondary" />
